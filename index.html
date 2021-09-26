@@ -1,6 +1,6 @@
 ﻿<html>
 <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>A Love Letter Across the Pacific</title>
+		<title>A Love Letter Across Pacific</title>
         <link rel = "icon" href = "./resources/static/favicon.png" type = "image/x-icon">
         <link type="text/css" rel="stylesheet" href="./resources/css/default.css">
         <link type="text/css" rel="stylesheet" href="./resources/css/all.css">
@@ -13,43 +13,67 @@
 		<script type="text/javascript" src="./resources/js/jscex-async-powerpack.min.js"></script>
 		<script type="text/javascript" src="./resources/js/functions.js" charset="utf-8"></script>
 		<script type="text/javascript" src="./resources/js/love.js" charset="utf-8"></script>
+        <script type="text/javascript" src="./resources/js/zoom-by-ironex.min.js"></script>
 </head>
     <body>
 
         <div id="main">
             <div id="wrap">
-                <!-- <div id="text">
-                    <div id="code"> 
-                        <span class="say">亲爱的宝宝，我爱你</span><br>
-                      <span class="say"> 我知道我不会甜言蜜语，</span><br>
-                      <span class="say"> 但是我会用行动证明一切</span><br>
-                      <span class="say">你说我啰嗦，</span><br>             
-                          <span class="say"> 有些东西因为越在乎所以越怕失去</span><br>
-                      <span class="say">因为我太爱你了，所以我害怕失去你</span><br>
-                      <span class="say">因为我太爱你了，所以我对你总啰嗦</span><br>
-                      <span class="say">希望可以执子之手，与子偕老</span><br>
-                      <span class="say">如果上天让我许三个愿望，</span><br>
-                              <span class="say">第一个是今生今世和你在一起， </span><br>
-                           <span class="say"> 第二个是再生再世和你在一起，</span><br>
-                           <span class="say">第三个是永生永世和你不分离 </span><br>
-                      <span class="say"><span class="space"></span> -- 爱你的老公</span> </font>
+                <div id="text" class="hide">
+                    <!-- <div id="code"> 
+                        <span class="say">Test</span><br>
+                      <span class="say"> </span><br>
+                      <span class="say"> </span><br>
+                      <span class="say"></span><br>             
+                          <span class="say"> </span><br>
+                      <span class="say"></span><br>
+                      <span class="say"></span><br>
+                      <span class="say"></span><br>
+                      <span class="say">，</span><br>
+                              <span class="say"> </span><br>
+                           <span class="say"> </span><br>
+                           <span class="say"></span><br>
+                      <span class="say"><span class="space"></span> </span> </font>
                           <br />
                           <br />
                       </p>
-                    </div>
-                  </div> -->
+                    </div> -->
+                    test
+                </div>
                 <div id="clock-box">
                   <div id="clock"></div>
-              </div>
+                </div>
                 <canvas id="canvas" ></canvas>
+                <div id="photo-box" class="hide">
+    
+                    <div class="zoom">
+                        <img id="img1" class="photo photo--small" src="./resources/static/20210921211615.jpg"/>
+                    </div>
+                    <span class="zoom" style=" position: relative;left: 275px">
+                        <img id="img2" class="photo photo--small" src="./resources/static/20210921220708.jpg"/>
+                    </span>
+                    <span class="zoom" style=" position: relative;left: 275px">
+                        <img id="img6" class="photo photo--small" src="./resources/static/20210921220717.jpg"/>
+                    </span>
+                    <div class="zoom" style=" position: relative;left:100px">
+                        <img id="img3" class="photo photo--small" src="./resources/static/20210921223220.jpg"/>
+                    </div>
+                    <div class="zoom" style=" position: relative;left: 300px">
+                        <img id="img4" class="photo photo--small" src="./resources/static/20210921222910.jpg"/>
+                    </div>
+                    <div class="zoom" style=" position: relative;;left: 50px">
+                        <img id="img5" class="photo photo--small" src="./resources/static/20210924150005.jpg"/>
+                    </div>
+
+                <div>
             </div>
-            
         </div>
     
     <script>
     </script>
 
     <script>
+    var mainText="2020年9月27日<br><br>猝不及防你就在我生命中出现<br>伴随着夏日黄昏的朦胧与斜阳无限<br>初初见你<br>还未来得及安抚心中的小鹿<br>便对上了你散发着灿烂星光的双眸<br>沙漏在一瞬间偏离了轨迹<br>柔柔的晚风里<br>藏着轻轻拥抱过你而被赋予的温柔<br>掠过了你的发梢吹进我的衣角<br>肩并肩与你走在沙滩上<br>身边的所有的喧嚣吵闹都变得虚无<br>只剩下夕阳下海风里你的身影<br>烙印在我脑海里<br>成为了我这辈子最无与伦比的风景<br>忍不住偷偷碰了你一下<br>却不料你如蒲公英般散开<br>往后余生我所到之处皆是你的模样";
     (function(){
         var canvas = $('#canvas');
 		
@@ -102,27 +126,23 @@
         var foot = tree.footer;
         var hold = 1;
 
-        // canvas.click(function(e) {
-        //     var offset = canvas.offset(), x, y;
-        //     //TODO: clear image will also clear the tree
-        //     tree.ctx.clearRect(0,0,1100,300);
-        //     tree.ctx.clearRect(0,680,1100,-300);
-        //     tree.ctx.clearRect(0,0,300,680);
-        //     tree.ctx.clearRect(900,0,300,680);
-        //     x = e.pageX - offset.left;
-        //     y = e.pageY - offset.top;
-        //     if (seed.hover(x, y)) {
-        //         hold = 0; 
-        //         canvas.unbind("click");
-        //         canvas.unbind("mousemove");
-        //         canvas.removeClass('hand');
-        //     }
-        // }).mousemove(function(e){
-        //     var offset = canvas.offset(), x, y;
-        //     x = e.pageX - offset.left;
-        //     y = e.pageY - offset.top;
-        //     canvas.toggleClass('hand', seed.hover(x, y));
-        // });
+        canvas.click(function(e) {
+            var offset = canvas.offset(), x, y;
+            x = e.pageX - offset.left;
+            y = e.pageY - offset.top;
+            console.log(e.pageX);
+            if (seed.hover(x, y)) {
+                hold = 0; 
+                canvas.unbind("click");
+                canvas.unbind("mousemove");
+                canvas.removeClass('hand');
+            }
+        }).mousemove(function(e){
+            var offset = canvas.offset(), x, y;
+            x = e.pageX - offset.left;
+            y = e.pageY - offset.top;
+            canvas.toggleClass('hand', seed.hover(x, y));
+        });
 
         var seedAnimate = eval(Jscex.compile("async", function () {
             seed.draw();
@@ -164,7 +184,6 @@
             foot.draw();
             tree.snapshot("p2", 520, 0, 610, 680);
 
-            // 会有闪烁不得意这样做, (＞﹏＜)
             canvas.parent().css("background", "url(" + tree.toDataURL('image/png') + ")");
             canvas.css("background-image", "linear-gradient(to top, #c1dfc4 0%, #deecdd 100%);");
             $await(Jscex.Async.sleep(300));
@@ -181,15 +200,15 @@
             }
         }));
 
-        var textAnimate = eval(Jscex.compile("async", function () {
-		    var together = new Date();
-		    together.setFullYear(2020,10,31); 			
-		    together.setHours(21);							
-		    together.setMinutes(32);					
+        var clockAnimate = eval(Jscex.compile("async", function () {
+		    var together = new Date("2020-09-27");
+			
+		    together.setHours(17);							
+		    together.setMinutes(0);					
 		    together.setSeconds(0);					
-		    together.setMilliseconds(5);				
+		    together.setMilliseconds(0);				
 
-		    $("#code").show().typewriter();
+		    
             $("#clock-box").fadeIn(500);
             while (true) {
                 timeElapse(together);
@@ -203,11 +222,50 @@
             $await(flowAnimate());
             $await(moveAnimate());
 
-            textAnimate().start();
-
+            clockAnimate().start();
+            // $("#code").show().typewriter();
+            $("#text").html(mainText);
+            $("#text").show()
+            // $("#photo-box").hide();
+            $("#photo-box").show();
+            zoom();
+        //     $(document).on('mousemove', "#main", function(){ 
+        // console.log('mousemove'); 
+        // $("img").removeClass("photo--active");
+    // });
             $await(jumpAnimate());
         }));
 
         runAsync().start();
     })();
+    $("img").hover(function(){
+        // $(this).addClass("photo--active");
+        switch ($(this)[0]["id"]){
+            case "img1":
+                $("#text").html("2020年11月5日<br><br>海上升明月<br>天涯共此时<br><br>想起你的时候总是伴随夕阳，海风，和沙滩<br>大概是因为希望日落月升潮起潮落都有你<br>陪我静静坐着看风景的你<br>比轻轻的海风更温柔<br>愿<br>所爱隔山海<br>山海皆可平");
+            break;
+            case "img2":
+                $("#text").html("2021年7月24日<br><br>日落跌落昭昭星野<br>人间忽晚<br>蝉鸣骤逝<br>山河已秋<br><br>和喜欢的你在一起原来不需要去计划什么刺激或者难忘的旅程<br>简单的露营就已经足以铭记<br>还想和你去看<br>那山川<br>那小溪<br>那盛名远扬或默默无闻的地方<br>只要你在<br>哪里都是最美的风景");
+            break;
+            case "img6":
+                $("#text").html("2021年7月24日<br><br>日落跌落昭昭星野<br>人间忽晚<br>蝉鸣骤逝<br>山河已秋<br><br>和喜欢的你在一起原来不需要去计划什么刺激或者难忘的旅程<br>简单的露营就已经足以铭记<br>还想和你去看<br>那山川<br>那小溪<br>那盛名远扬或默默无闻的地方<br>只要你在<br>哪里都是最美的风景");
+            break;
+            case "img4":
+                $("#text").html("2021年6月15日<br><br>闲看庭前花开花落<br>漫随天外云卷云舒<br><br>那时日子平淡<br>好在我喜欢<br>只因有你的生活温暖顺心<br>其它别无所求<br>在你忙碌的时候在你旁边默默陪着你<br>为你做点好吃的<br>一起看个电影散个步<br>那便是最大的幸福鸭");
+            break;
+            case "img3":
+                $("#text").html("2021年4月10日<br><br>总忆当时携手处<br>游遍芳丛<br><br>初夏的日<br>蝉鸣歌唱的热烈<br>微风吹起你的发梢<br>你牵我的手<br>穿过人声鼎沸的街道<br>紧握的指尖所著了多少时光<br>人声沸 动物随<br>你回过头<br>看着我笑<br>我才顿悟永恒的模样");
+            break;
+            case "img5":
+                $("#text").html("2021年8月3日<br><br>心跳遗落在那年盛夏<br>风止幡动 明眸刹那<br><br>夏夜微凉<br>思念成霜<br>梦里你温润如旧<br>眼神含笑般温柔<br>辗转 反侧 难免<br>心事 涨潮 蔓延<br>梦起<br>彼岸是你<br>梦醒<br>泣下沾襟");
+            break;
+        }},function(){
+            $("#text").html(mainText);
+        }
+    );
+    // $(".photo--active").mousemove(function() {
+    //     console.log("Test");
+    //   $(this).removeClass("photo--active");
+    // });
+
     </script></body></html>

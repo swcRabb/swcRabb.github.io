@@ -95,7 +95,7 @@
     Seed.prototype = {
         draw: function() {
             this.drawHeart();
-            this.drawImg();
+            this.drawEnvelop();
         },
         addPosition: function(x, y) {
             this.cirle.point = this.cirle.point.add(new Point(x, y));
@@ -172,7 +172,7 @@
             // ctx.fillText("Come Baby", 23, 10);
             // ctx.restore();
         },
-        drawImg: function(){
+        drawEnvelop: function(){
             var ctx = this.tree.ctx
             base_image = new Image();
             base_image.src = 'resources/static/envelope.png';
@@ -186,6 +186,10 @@
             var point = cirle.point, scale = cirle.scale, radius = 26;
             var w = h = (radius * scale);
             ctx.clearRect(point.x - w, point.y - h, 4 * w, 4 * h);
+            ctx.clearRect(0,0,1100,300);
+            ctx.clearRect(0,680,1100,-300);
+            ctx.clearRect(0,0,300,680);
+            ctx.clearRect(900,0,300,680);
         },
         hover: function(x, y) {
             var ctx = this.tree.ctx;
